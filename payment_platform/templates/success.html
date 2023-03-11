@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Initial Payment {% endblock %}
+{% block content %}
+<div class="mt-4 p-5 bg-success text-white rounded">
+    <h1>Transaction successful</h1>
+    <a class='btn btn-large btn-danger' href='{% url "initiate_payment" %}'>Home</a>
+</div>   
+{% endblock %}
+<!--for the ckeditor to show, the safe is added-->

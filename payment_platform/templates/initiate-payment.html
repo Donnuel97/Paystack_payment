@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %} Initial Payment {% endblock %}
+
+{% block content %}
+
+<div class='container'>
+<div class="row">
+    
+    <div class="col-lg-7">
+        <div class="mt-4 p-5 bg-secondary text-white rounded">
+            <h1>Initial Payment</h1>
+            <form class="post-form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %} 
+                {{ payment_form|crispy }}
+                <p>
+                <input class='btn btn-primary'type='submit' value='submit'>
+                </p> 
+                
+            </form>
+        
+        </div>   
+    </div>
+    <div class="col-lg-5">
+        <div class="card" style="width: 18rem;">
+            <img src="{% static 'images/img.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Emesue Nnaemeka Emmanuel</h5>
+              <p class="card-text">I am a web developer with three years of experience, i am equally a graduate from the University of Nigeria Nsukka.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><b>How many ways can you integrate Paystack into your app?</b></button></li>
+             
+              <li class="list-group-item"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2"><b>Can you use Postman?</b></button></li>
+              <li class="list-group-item"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal3"><b>Did you encounter any issues when using the Paystack APIs, and how did you resolve them?</b></button></li>
+              <li class="list-group-item"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal4"><b>How can you confirm if a transaction was successful or not?<b></button></li>
+              <li class="list-group-item"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal5"><b>What are webhooks?</b></button></li>
+            </ul>
+            <div class="card-body">
+              <a target="_blank" href="https://www.linkedin.com/in/emmanuel-emesue-abb381201?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRQ65sOp8SMmmz77sEgBBFA%3D%3D" class="text-decoration-none card-link">Linkedln</a>
+              <a href="https://github.com/Donnuel97" target="_blank" class="text-decoration-none card-link">Github</a>
+            </div>
+          </div>
+          {% include 'modal1.html' %}
+    </div>
+</div>
+</div>
+{% endblock %}
+<!--for the ckeditor to show, the safe is added-->
